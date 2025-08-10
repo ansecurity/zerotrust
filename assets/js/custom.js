@@ -1,4 +1,3 @@
-
 // https://github.com/jgthms/bulma/issues/238 thanks!
 document.getElementById("nav-toggle").addEventListener("click", toggleNav);
 function toggleNav() {
@@ -11,30 +10,34 @@ function toggleNav() {
     }
 }
 
-// for the random quote in the header
-var txtFile = new XMLHttpRequest();
-txtFile.open("GET", "/quotes.txt", true);
-txtFile.onreadystatechange = function () {
-    if (txtFile.readyState === 4) {
-        if (txtFile.status === 200) {
-            allText = txtFile.responseText;
-            lines = txtFile.responseText.split("\n");
-            randLine = lines[Math.floor((Math.random() * lines.length) + 1)];
-            document.getElementById('quote').innerHTML = randLine ||
-                "Intelligence is the ability to adapt to change."; // fallback quote
-        }
-    }
-};
-txtFile.send(null);
+// Array interno con frases de ciberseguridad (ejemplo breve)
+const quotes = [
+    "Zero Trust: no confíes, verifica siempre.",
+    "La triada CIA: confidencialidad, integridad y disponibilidad.",
+    "Un firewall es tan fuerte como su configuración.",
+    "Si torturas los datos lo suficiente, ellos hablarán.",
+    "Nunca subestimes el poder del principio de menor privilegio.",
+    "Los ataques no descansan, tu defensa tampoco debería."
+];
+
+// Mostrar frase aleatoria en el header
+function showRandomQuote() {
+    var randIndex = Math.floor(Math.random() * quotes.length);
+    var randLine = quotes[randIndex];
+    document.getElementById('quote').innerHTML = randLine || "Intelligence is the ability to adapt to change.";
+}
+
+// Llamamos a la función cuando cargue el script
+showRandomQuote();
 
 document.getElementById("search-text").addEventListener("keydown", function(e) {
-    // search
+    // buscar con enter
     if (e.keyCode == 13) { searchHandler(); }
 }, false);
 
 function searchHandler() {
     var searchInput = document.getElementById('search-text');
     var text = searchInput.value;
-    // add site:example.com in the placeholder
-    window.location.href = "https://www.google.com/search?q=site:nagekar.com " + text;
+    // agregar búsqueda site:example.com para limitar resultados a tu web
+    window.location.href = "https://www.google.com/search?q=site:nagekar.com " + encodeURIComponent(text);
 }
