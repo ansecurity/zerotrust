@@ -10,14 +10,14 @@ highlighter: rouge
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 #
-title : Soot Spirits
-tagline: Code, Science, Philosophy, Humor
-author :
-  name : Abhishek Nagekar
+title : Mario Guerrero - Ciberseguridad y Ciberdefensa
+tagline: Análisis, herramientas y estrategias en seguridad informática
+author : 
+  name : Mario Guerrero
   email : abhishek@nagekar.com
-  github : abhn
-  twitter : abhisheknagekar
-  feedburner : AbhishekN
+  github : pendiente
+  twitter : pendiente
+  feedburner : pendiente
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt

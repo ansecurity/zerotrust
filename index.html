@@ -1,19 +1,29 @@
 ---
 layout: page
-title: Well, Hello There!
+title: ¡Hola! Bienvenido a mi blog de Ciberseguridad y Ciberdefensa 😊 
 ---
+<p>👋 Soy Mario Guerrero, consultor IT especializado en ciberseguridad.</p>
+
+<p>💡 Aquí comparto lo que he aprendido, desde herramientas hasta estrategias, para ayudarte a proteger y entender mejor tus sistemas.</p>
+
+<p>🔐 Mi objetivo es que este espacio sea útil tanto para profesionales como para quienes quieran adentrarse en el mundo de la seguridad informática.</p>
+
+<p>📚 Explora mis artículos, tutoriales y recursos 👇. Si tienes preguntas o sugerencias, ¡no dudes en contactarme!</p>
+
+
 <ul class="posts">
-    {% for post in paginator.posts %}
-    <li class="post">
-        <small>{{ post.date | date_to_string }}</small>
-        <small><a style="color:grey" href="{{ BASE_PATH }}{{ post.url }}#disqus_thread"></a></small>
-        <br>
-        <a class="nice-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        <p class="nice-text">{{ post.content | strip_html | truncatewords: 50 }} <a href="{{ post.url | relative_url }}">Read more!</a></p>
-    </li>
-    {% endfor %}
-    {% include pagination.html %}
+  {% for post in paginator.posts %}
+  <li class="post">
+    <small>{{ post.date | date_to_string }}</small><br>
+    <a class="nice-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <p class="nice-text">{{ post.content | strip_html | truncatewords: 50 }} <a href="{{ post.url | relative_url }}">Leer más</a></p>
+  </li>
+  {% endfor %}
+  {% include pagination.html %}
 </ul>
+
+<p> No te pierdas más artículos, explora el blog completo 😊🚀</p>
+
 
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
